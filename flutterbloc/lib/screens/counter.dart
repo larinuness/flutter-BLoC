@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../components/container.dart';
+
 //o estado do contador é um inteiro
 //o Cubit vai gerenciar o estado, que no caso do counter seria to tipo inteiro
 class CounterCubit extends Cubit<int> {
@@ -14,7 +16,7 @@ class CounterCubit extends Cubit<int> {
   e seus comportamentos(increment e decrement)*/
 }
 
-class CounterContainer extends StatelessWidget {
+class CounterContainer extends BlocContainer {
   @override
   Widget build(BuildContext context) {
     //blockProvider vai juntar o gerenciador com a view
@@ -30,7 +32,7 @@ class CounterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contador'),
+        title: Text('Counter'),
       ),
       body: Center(
         //recebe o evento do emit
